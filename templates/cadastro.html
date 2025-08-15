@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/cadastro.css">
+</head>
+<body>
+    <div class="conteudoGeral">
+        <div class="cabecalho">
+            <nav>
+                <img src="/static/assets/logo1.png" alt="Logo JJ Finances" href="/">
+                <h1>JJ Finances</h1>
+            </nav>
+        </div>
+
+        <p class="erro">{{ erro }}</p>
+        
+        <div class="telaPrincipal">
+            <div class="formulario">
+                <form action="/cadastro" method="post">
+                    <input type="text" placeholder="Nome" id="nome" name="nome">
+
+                    <input type="email" placeholder="Email" id="email" name="email">
+
+                    <input type="password" placeholder="Senha" id="senha" name="senha">
+
+                    <input type="password" placeholder="Confirme sua Senha" id="senha_confirmada" name="senha_confirmada">
+
+                    <button type="submit">Cadastrar-se</button>
+
+                    <p>Já possui uma conta? <a href="/login">Fazer Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

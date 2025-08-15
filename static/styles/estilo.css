@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #0A1A2B;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+
+.titulo {
+    margin-right: 180px;
+    font-size: 26px;
+    color: #ffffff;
+}
+
+.margem{
+    width: 50%;
+}
+
+.conheca{
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #273D4F;
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat';
+    margin-left: 300px;
+}
+
+.buttons .btn {
+    background-color: transparent;
+    color: white;
+    margin-left: 25px;
+    cursor: pointer;
+    font-size: 20px;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.buttons .btn-primary {
+    background-color: #18d07a;
+    border-radius: 40px;
+    border: none;
+    padding: 20px;
+    color: #ffffff;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.hero-content {
+    max-width: 60%;
+    width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-top: -150px; 
+    color: #ffffff;
+}
+
+.hero-content p {
+    display: flex;
+    text-align: left;
+    width: 800px;
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #b0b0b0;
+}
+
+
+.image {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.accordion {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #1c2b44;
+    border-radius: 10px;
+}
+
+.accordion-item {
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: left;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #333;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.faq-item input {
+    display: none;
+}
+
+.faq-item label {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.faq-item label:hover {
+    background-color: #1C2532;
+}
+
+.faq-item .content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    font-size: 20px;
+    background-color: #1C2532;
+    color: #ddd;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    font-family: 'Montserrat';
+}
+
+.faq-item input:checked ~ .content {
+    max-height: 100px; 
+    padding: 3px;
+}
+
+.faq-item label::after {
+    content: "+";
+    font-size: 18px;
+}
+
+.faq-item input:checked + label::after {
+    content: "-";
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+footer a {
+    color: #4ec7b0;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+

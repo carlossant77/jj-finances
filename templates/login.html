@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ Finances</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- Carregar API reCAPTCHA -->
+    <link rel="stylesheet" href="/static/styles/estiloLogin.css">
+</head>
+<body>
+    <div class="conteudo_geral">
+        <div class="container">
+            <header>
+                <div class="logo">
+                    <img src="/static/assets/logo1.png" alt="Logo JJ Finances" href="/" /> 
+                </div>
+                <a href="/"><h1>JJ Finances</h1></a>
+            </header>
+            <main>
+                <div class="erro">
+                        <p>{{ erro }}</p>
+                </div>
+                
+                    <div class="login-box">
+                        <form method="POST" action="/login"> 
+                            <input type="text" name="nome" placeholder="Usuário" required>
+                            <input type="password" name="senha" placeholder="Senha" required>
+                            <div class=" g-recaptcha" data-sitekey="6Ldy54UqAAAAABoGjFVKRHgWqFZ6fM2nQbgLC5WS" aria-required="true"></div>
+                            <button type="susbmit">Entrar</button>
+                        </form>
+                        <p>Não possui uma conta? <a href="/cadastro">Cadastrar-se</a></p>
+                 </main>
+               </div>
+
+            <div class="margem"></div>
+        </div>
+    </div>
+</body>
+</html>

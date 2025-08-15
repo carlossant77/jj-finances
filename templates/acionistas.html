@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/acionistas.css">
+</head>
+<body>
+    <header>
+        <div class="imagem"><img src="/static/assets/logo1.png" alt="" width="75px"></div>
+        <div class="titulo"><a href="/"><b>JJ Finances</b></a></div>
+ 
+ 
+ 
+            <div class="navegacao">
+                <a href="/bolsa" class="bolsa">Bolsa de Valores</a>
+                <a href="/investir">Investimentos</a>
+                <a href="/acionista">Acionistas</a>
+            </div>
+ 
+        <div class="perfil" tabindex="0">
+            <img src="/static/assets/236.jpg" alt="" class="foto">
+            <div class="menu">
+                <p>Olá, {{ nome }}</p>
+                <a href="/logout">Sair</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="tela_1">
+            <div class="secao_1">
+                <div class="texto_1">
+                    <p>Esta é uma aba dedicada aos <b>fiéis acionistas</b> da <b>JJ Finances.</b> Ao possuir alguma ação ou valor em nossos investimentos, estes tiveram a oportunidade de se registrarem como nossos <b>acionistas</b> e podem <b>dar um feedback</b> em nossa seção!</p>
+                </div>
+            </div>
+            <div class="secao_2">
+                <h1>Nossos Acionistas</h1>
+                <div class="aba_acionistas">
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/nathaliaribeiro.jpg" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Nathália Ribeiro</h1>
+                            <p>“Queria facilidade e agilidade, encontrei na JJ Finances!”</p>
+                        </div>
+                    </div>
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/igorvalente.jpg" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Igor Valente</h1>
+                            <p>“Deposito 80% do meu dinheiro na JJ Finances, nunca me arrependo.”</p>
+                        </div>
+                    </div>
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/cezaroliveira.jpg" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Cézar Oliveira</h1>
+                            <p>"Com a JJ Finances, meu dinheiro rende de maneira segura e com total transparência. Recomendo!"</p>
+                        </div>
+                    </div>
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/mateuscesca.png" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Mateus Cesca</h1>
+                            <p>"Investir na JJ Finances é como encontrar a maquiagem perfeita: me deixa cada vez mais tranquila!”</p>
+                        </div>
+                    </div>
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/isabelacarvalho.png" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Isabela Carvalho</h1>
+                            <p>"Agilidade e praticidade são essenciais pra mim, e a JJ Finances superou minhas expectativas!"</p>
+                        </div>
+                    </div>
+                    <div class="cliente">
+                        <div class="foto_perfil"><img src="/static/assets/lucasalmeida.png" alt=""></div>
+                        <div class="informacoes">
+                            <h1>Lucas Almeida</h1>
+                            <p>"A JJ Finances transformou a maneira como gerencio minhas finanças. Rápido, simples e sem complicação!"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tela_2">
+            <h1>O que é um acionista?</h1>
+            <p>Um acionista é uma pessoa ou entidade que possui ações de uma empresa, ou seja, uma parte do capital social dessa companhia. Ao adquirir ações, o acionista se torna um dos proprietários da empresa, tendo direito a uma parte dos lucros, geralmente por meio de dividendos, e a influenciar decisões importantes por meio do voto em assembleias. A quantidade de ações que o acionista detém define seu nível de influência, podendo ser um acionista minoritário (com pouca participação) ou majoritário (com maior poder de decisão). Contudo, os acionistas também assumem riscos, pois, em caso de prejuízos ou falência da empresa, podem perder parte ou todo o valor investido.</p>
+            <a href="">Torne-se um Acionista</a> 
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Empresa JJ Finances | Todos os direitos reservados</p>
+        <p>Contato: contato@empresa.com | Redes sociais: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </footer>
+</body>
+</html>

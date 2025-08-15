@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolsa de Valores</title>
+    <link rel="stylesheet" href="/static/styles/estiloBolsa.css">
+    <script src="/static/scripts/caiu.js"></script>
+</head>
+<body>
+    <header>
+        <div class="imagem"><img src="/static/assets/logo1.png" alt="" width="75px"></div>
+        <div class="titulo"><a href="/"><b>JJ Finances</b></a></div>
+ 
+ 
+ 
+            <div class="navegacao">
+                <a href="/bolsa" class="bolsa">Bolsa de Valores</a>
+                <a href="/investir">Investimentos</a>
+                <a href="/acionista">Acionistas</a>
+            </div>
+ 
+        <div class="perfil" tabindex="0">
+            <img src="/static/assets/236.jpg" alt="" class="foto">
+            <div class="menu">
+                <p>Olá, {{ nome }}</p>
+                <a href="/logout">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="tela">
+            <div class="texto-principal">
+                <h1>Como Investir <br>na Bolsa de Valores?</h1>
+            </div>
+
+            <div class="texto">
+                <p>De acordo com nossos <b>analistas de dados profissionais</b> e <b>IAs especializadas</b>, para começar 
+                    a investir na Bolsa de Valores, é necessário criar uma conta em uma corretora de valores, 
+                    transferir recursos e selecionar os investimentos iniciais. Para garantir bons rendimentos, 
+                    é fundamental ter uma reserva financeira, definir o perfil de investidor, traçar objetivos claros, 
+                    criar estratégias para a carteira, acompanhar os ativos e buscar informações de especialistas.
+                    Os investimentos podem ser planejados para curto, médio e longo prazo, considerando o tempo e a volatilidade 
+                    dos ativos. Opções como FIIs, BDRs, ETFs e Fundos de Ações são ideais para diversificar a carteira, oferecendo 
+                    segurança, rentabilidade constante e potencial de crescimento no longo prazo.</p>
+            </div>
+        </div>
+
+        <div class="tela2">
+            <div class="titulo_bolsa"><h1>Acompanhe a Bolsa em tempo real: <br></h1></div>
+            <div class="sub"><p>Alterações nas Cotações</p></div>
+
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Símbolo</th>
+                            <th>Preço (R$)</th>
+                            <th>Variação</th>
+                            <th>% Variação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for stock in stocks %}
+                        <tr>
+                            <td>{{ stock.name }}</td>
+                            <td>{{ stock.symbol }}</td>
+                            <td>{{ stock.price }}</td>
+                            <td class="{{ 'positive' if stock.change >= 0 else 'negative' }}">
+                                {{ stock.change }}
+                            </td>
+                            <td class="{{ 'positive' if stock.percentage_change >= 0 else 'negative' }}">
+                                {{ stock.percentage_change }}%
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 - Empresa JJ Finances | Todos os direitos reservados</p>
+            <p>Contato: contato@empresa.com | Redes sociais: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+        </footer>
+
+    </main>
+</body>
+</html>

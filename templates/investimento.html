@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/estiloInvestir.css">
+    <title>Investimento</title>
+</head>
+<body>
+<header>
+        <div class="imagem"><img src="/static/assets/logo1.png" alt="" width="75px"></div>
+        <div class="titulo"><a href="/"><b>JJ Finances</b></a></div>
+ 
+ 
+ 
+            <div class="navegacao">
+                <a href="/bolsa" class="bolsa">Bolsa de Valores</a>
+                <a href="/investir">Investimentos</a>
+                <a href="/acionista">Acionistas</a>
+            </div>
+ 
+        <div class="perfil" tabindex="0">
+            <img src="/static/assets/236.jpg" alt="" class="foto">
+            <div class="menu">
+                <p>Olá, {{ nome }}</p>
+                <a href="/logout">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="tela">
+            <div class="texto-principal">
+                <h1>O que são <br>investimentos?</h1>
+            </div>
+            <div class="texto">
+                <p><b>Investimento financeiro</b> é o ato de destinar dinheiro a aplicações ou ativos com o objetivo de obter retorno 
+                financeiro ao longo do tempo. Isso pode incluir diferentes modalidades, como ações, títulos de renda fixa, fundos 
+                imobiliários, moedas digitais, entre outros. O objetivo principal é fazer o capital crescer ou gerar renda passiva
+                por meio de juros, dividendos ou valorização dos ativos.</p>
+            </div>
+        </div>
+
+        <div class="tela2">
+            <nav>
+                <button class="tab-button" data-tab="calculadora"><b>Calculadora de Inv.</b></button>
+                <button class="tab-button" data-tab="investimento"><b>Criptomoedas</b></button>
+                <button class="tab-button" data-tab="bolsa"><b>Bolsa de Valores</b></button>
+            </nav>
+            <div class="content">
+                <section id="calculadora" class="tab-content active">
+                    <h1>Calculadora de Investimentos</h1>
+                    <p>A JJ Finances criou um projeto inovador para auxiliar nossos fiéis clientes na sua experiência com investimentos.
+                    Conhecendo o mercado e as variedades de investimentos disponíveis, disponibilizamos uma calculadora de investimentos
+                    com uma ampla gama de possibilidades.</p>
+                    
+                    <form method="POST">
+                        <div class="inputs">
+                            <div>
+                                <label for="inicial">Investimento Inicial (R$):</label>
+                                <input type="number" id="inicial" name="inicial" step="0.01" required>
+                            </div>
+                        
+                            <div>
+                                <label for="aporte">Aportes Mensais (R$):</label>
+                                <input type="number" id="aporte" name="aporte" step="0.01" required>
+                            </div>
+
+                            <div>
+                                <label for="meses">Período de aplicação (meses):</label>
+                                <input type="number" id="meses" name="meses" required>
+                            </div>
+
+                        </div>
+                        
+                        <div class="botao">
+                            <button type="submit">Calcular</button>
+                        </div>
+                    </form>
+            
+                    {% if resultados %}
+                    <h2>Melhores opções de Investimento pra você:</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo de Investimento</th>
+                                <th>Saldo Final (R$)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for resultado in resultados %}
+                            <tr>
+                                <td>{{ resultado.tipo }}</td>
+                                <td>{{ resultado.rendimento }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </section>
+                <section id="investimento" class="tab-content">
+                    <h1>Criptomoedas</h1>
+                    <p>Criptomoedas são moedas digitais descentralizadas que utilizam tecnologia blockchain para garantir segurança, 
+                    transparência e funcionamento sem a necessidade de intermediários, como bancos. Elas permitem a realização de 
+                    transações financeiras diretamente entre pessoas, além de servirem como forma de investimento. As criptomoedas mais 
+                    conhecidas, como o Bitcoin e o Ethereum, destacam-se pela sua volatilidade e potencial de valorização, atraindo 
+                    investidores que buscam diversificar suas carteiras.</p>
+
+                    <h1 class="titulo_cripto"><b>Criptomoedas mais Famosas </b></h1>
+
+                    <div class="container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Preço</th>
+                                    <th>Variação (24h)</th>
+                                    <th>Volume 24h</th>
+                                </tr>
+                            </thead>
+                            <tbody id="coins-tbody">
+                                <!-- Dados das moedas serão inseridos aqui dinamicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <script>
+                        // Função para atualizar a tabela com dados das criptomoedas
+                        function updateCoins() {
+                            fetch('/api/coins')
+                                .then(response => response.json())
+                                .then(data => {
+                                    const tbody = document.getElementById('coins-tbody');
+                                    tbody.innerHTML = ''; // Limpa o conteúdo existente
+                
+                                    data.forEach(coin => {
+                                        const row = document.createElement('tr');
+                                        row.innerHTML = `
+                                            <td>
+                                                <img src="${coin.image}" alt="${coin.name}" width="20">
+                                                ${coin.name} (${coin.symbol.toUpperCase()})
+                                            </td>
+                                            <td>$${coin.current_price.toFixed(2)}</td>
+                                            <td class="${coin.price_change_percentage_24h >= 0 ? 'green variation-up' : 'red variation-down'}">
+                                                ${coin.price_change_percentage_24h.toFixed(2)}%
+                                            </td>
+                                            <td>$${coin.total_volume.toFixed(2)}</td>
+                                        `;
+                                        tbody.appendChild(row);
+                                    });
+                                })
+                                .catch(error => console.error('Error fetching data:', error));
+                        }
+                
+                        // Chama a função para atualizar a tabela assim que a página for carregada
+                        document.addEventListener('DOMContentLoaded', updateCoins);
+                
+                        // Atualiza os dados a cada 10 segundos (30000ms)
+                        setInterval(updateCoins, 10000);
+                    </script>
+                </section>
+                <section id="bolsa" class="tab-content">
+                    <h1>Bolsa de Valores</h1>
+                    <p>A bolsa de valores é um ambiente de negociação onde investidores compram e vendem ativos financeiros, como ações,
+                    fundos imobiliários e commodities. Ela conecta empresas que desejam captar recursos para crescer com pessoas interessadas
+                    em investir seu dinheiro em busca de retorno. Funcionando como um mercado organizado e regulado, a bolsa garante transparência,
+                    segurança e liquidez nas transações, sendo essencial para o desenvolvimento da economia e para a construção de patrimônio dos investidores.</p>
+
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <h2>Perguntas - Bolsa de Valores</h2>
+                        </div>
+                        <div class="chat-box">
+                            <div class="message bot">
+                                <p>Olá! Como posso te ajudar hoje? Escolha uma pergunta abaixo.</p>
+                            </div>
+                            {% if answer %}
+                                <div class="message bot">
+                                    <p>{{ answer }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <form method="POST" action="/investir">
+                            <label for="question">Escolha uma pergunta:</label>
+                            <select name="question" id="question" required>
+                                {% for q in questions %}
+                                    <option value="{{ q }}" {% if q == question %}selected{% endif %}>{{ q }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 - Empresa JJ Finances | Todos os direitos reservados</p>
+            <p>Contato: contato@empresa.com | Redes sociais: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+        </footer>
+
+        <script src="/static/scripts/menu.js"></script>
+    </main>
+</body>
+</html>

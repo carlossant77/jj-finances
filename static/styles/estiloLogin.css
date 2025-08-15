@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+}
+
+header{
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    font-family: 'Montserrat';
+}
+
+
+.conteudo_geral{
+    background-color: #0A1A2B;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+
+header a h1{
+    font-size: 40px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header a{
+    text-decoration: none;
+}
+
+
+.login-box {
+    background-color: #273D4F;
+    padding: 40px;
+    border-radius: 20px;
+    height: 400px;
+    width: 100%;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.g-recaptcha{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input {
+    padding: 20px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3F5A72;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+.login-box input::placeholder {
+    align-content: center;
+    color: white;
+    font-size: 20px;
+    font-family: 'Montserrat';
+}
+
+.login-box button {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    background-color: #34D399;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    width: 180px;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.login-box button:hover {
+    background-color: #16a085;
+}
+
+.login-box p {
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: #bbb;
+}
+
+.login-box p a {
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-box p a:hover {
+    text-decoration: underline;
+}
+
+.margem{
+    height: 15%;
+}
+
+.erro{
+    display: flex;
+    flex-direction: column;
+}

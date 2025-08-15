@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+ 
+*{
+    margin: 0px;
+    padding: 0px;
+}
+ 
+body{
+    background-color: #0A1A2B;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+}
+ 
+.image{
+    margin-left: 200px;
+}
+ 
+.titulo{
+    margin-left: 10px;
+    margin-right: 350px;
+}
+ 
+header{
+    height: 100px;
+}
+ 
+.navegacao{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 700px;
+    gap: 30px;
+    margin-right: 70px;
+}
+ 
+.navegacao a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+ 
+.titulo a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+ 
+.navegacao a:hover{
+    border-bottom: 1px solid white;
+}
+ 
+.foto{
+    border-radius: 100%;
+    height: 80px;
+    width: auto;
+    cursor: pointer;
+}
+ 
+.menu{
+    margin-left: -1vw;
+    position: absolute;
+    display: none;
+    margin-top: 5px;
+    background-color: #0D2C3F;
+    padding: 10px;
+    border-radius: 20px;
+}
+ 
+.menu a{
+    text-decoration: none;
+    color: #18d07a;
+    font-size: 20px;
+}
+ 
+.menu a:hover{
+    border-bottom: 1px solid white;
+}
+ 
+.menu p{
+    font-size: 20px;
+}
+ 
+.perfil:focus-within .menu{
+    display: block;
+}
+ 
+
+.acionistas{
+    border-bottom: 1px solid white;
+}
+
+.tela_1{
+    margin-top: 5%;
+    display: flex;
+}
+
+.secao_1{
+    width: 45%;
+}
+
+.secao_2{
+    width: 55%;
+}
+
+.texto_1{
+    font-size: 28px;
+    width: 50%;
+    margin-left: 18%;
+    border-radius: 50px;
+    background-color: #1A2A3B;
+    padding: 20px;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.secao_2 h1{
+    justify-self: center;
+}
+
+.aba_acionistas{
+    justify-self: center;
+    width: 90%;
+    margin-top: 25px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas de igual tamanho */
+    grid-template-rows: 1fr 1fr; /* 2 linhas de igual tamanho */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+.foto_perfil img{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
+
+.informacoes p{
+    justify-self: center;
+    text-align: center;
+    width: 95%;
+}
+
+.informacoes h1{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.cliente{
+    display: flex;
+    background-color: #273D4F;
+    border-radius: 20px;
+    align-items: center;
+    padding: 12px;
+}
+
+.tela_2{
+    margin-top: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tela_2 h1{
+    font-size: 40px;
+}
+
+.tela_2 p{
+    width: 80%;
+    font-size: 24px;
+    margin-top: 2%;
+    text-align: center;
+}
+
+.tela_2 a{
+    margin-top: 4%;
+    background-color: #34D399;
+    border-radius: 50px;
+    padding: 20px;
+    font-weight: bold;
+    margin-bottom: 4%;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+footer a {
+    color: #4ec7b0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
