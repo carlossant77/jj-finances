@@ -1,0 +1,5 @@
+Flask==3.0.3
+python-engineio==4.9.1
+gunicorn==23.0.0
+eventlet==0.35.2
+requests==2.32.3
