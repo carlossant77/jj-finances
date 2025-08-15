@@ -1,6 +1,6 @@
 # jj-finances
 ---
-O site JJ Finances é uma aplicação web desenvolvida com o fim de informar e guiar o usuário em processos de investimentos realizados dentro e fora da bolsa de valores.
+O site JJ Finances é uma aplicação web desenvolvida com o fim de informar e guiar o usuário em processos de investimentos realizados dentro e fora da bolsa de valores. O site possui simulações e atualizações em tempo real, permanecendo sempre útil ao passar do tempo.
 
 # Demonstração Visual 🔎
 ![foto1](static/assets/pagini.png)
